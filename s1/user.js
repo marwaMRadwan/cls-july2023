@@ -1,6 +1,7 @@
-const heads = ["FullName", "phone", "email", "age"]
+let allUsers = JSON.parse(localStorage.getItem("users"))
+if(!allUsers) allUsers=[]
 
-const allUsers = []
+const heads = ["FullName", "phone", "email", "age"]
 
 const addForm = document.querySelector("#addData")
 
@@ -62,5 +63,7 @@ addForm.addEventListener("submit", function(e){
     allUsers.push( userData )
     drawData(allUsers);
     addForm.reset();
+    localStorage.setItem("users", JSON.stringify(allUsers))
 })
 
+drawData(allUsers)
