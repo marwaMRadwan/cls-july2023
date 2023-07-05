@@ -58,9 +58,15 @@
 const myArrayMethods = (myArray) => {
     return {
         myArray,
-        myForEach: (ahmed)=>{
-            for(let i = 0; i<myArray.length; i+=x)
-                ahmed(myArray[i], i, myArray)
+        myForEach: (callback)=>{
+            for(let i = 0; i<myArray.length; i++)
+                callback(myArray[i], i, myArray)
+        },
+        myIndex: (val, callback)=>{
+            result = -1
+            for(let i = 0; i<myArray.length; i++)
+                if(myArray[i].name == val) result = i
+            callback(result)
         }
     }
 }
@@ -72,9 +78,11 @@ data= [
 ]
 
 users = myArrayMethods(data)
-users.myForEach(user=>{
-    console.log(user.age)
-})
+// users.myForEach(user=>{
+//     console.log(user.age)
+// })
+users.myIndex("ajjj", res=> console.log(res))
+
 // const arr = myArrayMethods([1,2,3,4,5])
 // arr.myForEach((el, ind)=> console.log(el, ind))
 // emps = myArrayMethods([
