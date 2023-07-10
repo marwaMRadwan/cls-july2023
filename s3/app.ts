@@ -187,11 +187,12 @@ class Teacher extends Person{
         
     }
 }
-class Student extends Person{
-    grades : Grade[]
-}
+// class Student extends Person{
+//     grades : Grade[]
+// }
 
 
+const t1 = new Teacher("marwa", 38, 1, "", 2000)
 
 
 
