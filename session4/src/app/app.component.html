@@ -1,0 +1,94 @@
+<!-- <h2>Data Binding</h2>
+<h3 class="{{main}}">Interpolation</h3>
+<p> {{ title }} </p>
+<p> {{ x + y }} </p>
+<p> {{ hello() }} </p>
+<p> {{ x>y }} </p>
+<p> {{ user.name }} </p>
+<p> {{ user | json }}  </p>
+
+<h3>Property Binding</h3>
+<p [class]="main">{{title}}</p>
+<img [src]="imgSrc">
+<button [disabled]="isDisabled">Click</button>
+<p [className]="main">hello</p>
+-->
+<h3>Event Binding</h3>
+<!-- <p (click)="a()">click here</p> -->
+<!-- 
+<button (click)="increase()">+</button>
+{{counter}}
+<button (click)="decrease()">-</button> -->
+<!-- <div [class]="myDisplay">
+  Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem
+</div>
+<button (click)="showHide()">{{msg}}</button> -->
+
+<!-- <input #myVal (keyup)="handleData(myVal)">
+<p> you entered {{val}}</p>
+
+<input #myVal (keyup)="val=myVal.value">
+<p> you entered {{val}}</p> -->
+
+<!-- <input (keyup)="val = $any($event.target).value">
+<p> you entered {{val}}</p> -->
+
+<!-- <h3> Two Way Binding</h3>
+<input [(ngModel)]="val">
+<p> you entered {{val}}</p> -->
+
+<!-- <div *ngFor="let element of data">
+  <img [src]="element.url">
+  <p>{{ element.title }}</p>
+</div> -->
+<!-- 
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>title</th>
+      <th>image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let el of data ; 
+    let i = index; 
+    let o=odd; 
+    let e=even;
+    let f = first;
+    let l=last" >
+      <td> index => {{i}}</td>
+      <td> odd => {{o}}</td>
+      <td> even => {{e}}</td>
+      <td> first => {{f}}</td>
+      <td> last => {{l}}</td>
+      <td>{{el.id}}</td>
+      <td>{{el.title}}</td>
+      <td><img src="{{el.url}}" width="50" height="50"></td>
+    </tr>
+  </tbody>
+</table> -->
+
+<input [(ngModel)]="monthNum">
+<div [ngSwitch]="monthNum">
+  <li *ngSwitchCase=1>Jan</li>
+  <li *ngSwitchCase=2>feb</li>
+  <li *ngSwitchCase=3>mar</li>
+  <li *ngSwitchCase=4>apr</li>
+  <li *ngSwitchCase=5>may</li>
+  <li *ngSwitchCase=6>Jun</li>
+  <li *ngSwitchCase=7>Jul</li>
+  <li *ngSwitchCase=8>aug</li>
+  <li *ngSwitchCase=9>sep</li>
+  <li *ngSwitchCase=10>oct</li>
+  <li *ngSwitchCase=11>nov</li>
+  <li *ngSwitchCase=12>dec</li>
+  <li *ngSwitchDefault>Error in Number</li>
+</div>
+
+
+
+
+
+
+
