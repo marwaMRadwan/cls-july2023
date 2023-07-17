@@ -1,0 +1,11 @@
+<section class="row py-5">
+    <!-- <app-card [childData]="data"></app-card> -->
+    <div class="alert alert-success" 
+    *ngIf="status; else myElse">
+        hello
+    </div>
+    <ng-template #myElse>
+        <div class="alert alert-primary">test</div>
+    </ng-template>
+    <button (click)="status=!status">Click me</button>
+</section>

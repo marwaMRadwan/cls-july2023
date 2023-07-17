@@ -1,0 +1,25 @@
+<img src="assets/load.gif" class="w-50" *ngIf="!isLoaded">
+
+<table class="table table-bordered" *ngIf="errorinData==''&& isLoaded; else errorData">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pro of apiData; let i =index">
+            <td>{{i+1}}</td>
+            <td>{{pro.title}}</td>
+            <td><img [src]="pro.thumbnail" width="50" height="50"></td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #errorData>
+    <div class="alert alert-danger">
+        hgdhgeh
+        {{errorinData}}
+    </div>
+</ng-template>
