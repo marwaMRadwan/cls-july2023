@@ -1,0 +1,15 @@
+
+<section class="container my-5">
+    <div *ngIf="errMsg!=''; else data">
+    {{errMsg}}
+    </div>
+    <ng-template #data>
+        <h3>{{productData.title}}</h3>
+        <p>{{productData.description}}</p>
+        <h5>{{productData.price}}</h5>
+        <h5>{{productData.discountPercentage}}</h5>
+        <div class="col-3" *ngFor="let img of productData.images">
+            <img src="{{img}}" class="img-fluid">
+        </div>    
+    </ng-template>
+    </section>

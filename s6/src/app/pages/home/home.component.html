@@ -1,0 +1,30 @@
+<section class="container my-5">
+    <div class="row mb-3">
+        <div class="col-8">
+            <input placeholder="Serch Here" class="form-control " [(ngModel)]="searchKey">
+        </div>
+<button class="btn btn-primary col-2" (click)="filterData()">Search</button>
+<button class="btn btn-danger ms-2 col-1" (click)="searchKey=''; filterData()">reset</button>
+    </div>
+    <div class="row" *ngIf="isLoaded && filteredData.length==0">
+        <div class="alert alert-warning">
+            No Data Found
+        </div>
+    </div>
+    <div class="row" *ngIf="!isLoaded">Loading.....</div>
+
+    <div class="row"  *ngIf="errMsg=='' && isLoaded">
+        <div [className]="'col-4'" *ngFor="let p of filteredData">
+            <div class="m-2 border-3">
+                <img [src]="p.thumbnail" class="img-fluid">
+                <h3 class="text-primary">{{p.title}}</h3>
+                <button class="btn btn-primary" routerLink="product/{{p.id}}">Read More</button>
+            </div>
+        </div>
+    </div>
+    <div class="row"  *ngIf="errMsg!='' && isLoaded">
+        <div class="alert alert-danger">
+            {{errMsg}}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,12 @@
+main = [1,2,3,4]
+filtered = [1,2,3,4]
+
+
+2
+filtered = main.filter(==2)
+filtered = [2]
+
+filtered = main.filter()
+filtered=[1,2,3,4]
+
+4
