@@ -1,0 +1,35 @@
+<section class="container my-5">
+    <div class="alert alert-primary">
+        <p>valid => {{ addForm.valid }}</p>
+        <p>invalid => {{ addForm.invalid }}</p>
+        <p>values => {{addForm.value | json }}</p>
+        <p>submitted => {{addForm.submitted}}</p>
+        <p> touched => {{addForm.touched}}</p>
+    </div>
+    <form #addForm="ngForm" (ngSubmit)="addData(addForm)">
+        <div class="mb-3">
+            <input placeholder="name" class="form-control" 
+            #name ="ngModel"
+            ngModel 
+            name="name"
+            required
+            >
+            <div class="alert alert-primary">
+                <p>valid => {{ addForm.valid }}</p>
+                <p>invalid => {{ addForm.invalid }}</p>
+                <p>values => {{addForm.value | json }}</p>
+                <p>submitted => {{addForm.submitted}}</p>
+                <p> touched => {{addForm.touched}}</p>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input placeholder="age" class="form-control" ngModel name="age">
+        </div>
+        <div class="mb-3">
+            <input placeholder="email" class="form-control" ngModel name="email">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary">add</button>
+        </div>
+    </form>
+</section>

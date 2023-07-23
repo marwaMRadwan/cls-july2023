@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { DataService } from 'src/app/providers/services/data.service';
-
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,7 +14,9 @@ export class HomeComponent {
   isLoaded :boolean= false
   searchKey: string = ""
 
-  constructor(private _data: DataService){
+  constructor(private _data: DataService, private _activated:ActivatedRoute){
+    // console.log(_activated.snapshot.queryParamMap.get("name"))
+    console.log(_activated.snapshot.queryParams["name"])
   }
   ngOnInit():void{
     this.getAllProducts()
@@ -39,4 +41,7 @@ export class HomeComponent {
       pro.title.includes(this.searchKey) 
     )
   }
+  // data = [{name:"marwa"}]
+  // d = new Date()
+
 }
