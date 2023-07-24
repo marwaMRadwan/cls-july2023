@@ -1,0 +1,47 @@
+<section class="container my-5">
+    <form #register="ngForm" (ngSubmit)="reg(register)">
+        <div class="mb-3">
+            <input name="fname" placeholder="first name" #fName="ngModel" ngModel required minlength="3" maxlength="20" class="form-control">
+            <div class="my-3  alert alert-danger" *ngIf="fName.invalid && (fName.dirty || register.submitted || fName.touched )">
+                <li *ngIf="fName.errors?.['required']">
+                    First Name is Required
+                </li>
+                <li *ngIf="fName.errors?.['minlength']">
+                    First Name must be greater than 3 characters
+                </li>
+                <li *ngIf="fName.errors?.['maxlength']">
+                    First Name must be less than 20 characters
+                </li>
+            </div> 
+        </div>
+        <div class="mb-3">
+            <input name="lname" placeholder="last name" #lName="ngModel" ngModel required minlength="3" maxlength="20" class="form-control">
+            <div class="my-3  alert alert-danger" *ngIf="lName.invalid && (lName.dirty || register.submitted || lName.touched )">
+                <li *ngIf="lName.errors?.['required']">
+                    Last Name is Required
+                </li>
+                <li *ngIf="lName.errors?.['minlength']">
+                    Last Name must be greater than 3 characters
+                </li>
+                <li *ngIf="lName.errors?.['maxlength']">
+                    Last Name must be less than 20 characters
+                </li>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input name="email" placeholder="email" ngModel required email #email="ngModel" class="form-control">
+            <div class="my-3 alert alert-danger" *ngIf="email.invalid && (email.touched|| email.dirty || register.submitted)">
+                <li *ngIf="email.errors?.['email']">Email invalid format</li>
+                <li *ngIf="email.errors?.['required']">Email is required</li>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input name="age" placeholder="age" ngModel class="form-control" required #age="ngModel" pattern="[0-9][0-9]">
+            <div class="my-3 alert alert-danger" *ngIf="age.invalid && (age.touched|| age.dirty || register.submitted)" >
+                <li *ngIf="age.errors?.['required']">Age is required</li>
+                <li *ngIf="age.errors?.['pattern']">Invalid age format</li>
+            </div>
+        </div>
+        <button class="btn btn-primary">register</button>
+    </form>
+</section>
