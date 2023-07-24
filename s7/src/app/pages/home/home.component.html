@@ -1,0 +1,26 @@
+<section class="container my-5">
+    <table class="table table-bordered">
+        <thead> 
+            <tr>
+                <td>_id</td>
+                <td>name</td>
+                <td>age</td>
+                <td>email</td>
+                <td>status</td>
+                <td>type</td>
+                <td>otp</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of allUsers">
+                <td>{{user._id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.status}}</td>
+                <td>{{user.type}}</td>
+                <td>{{user.otp}}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

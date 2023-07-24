@@ -12,4 +12,7 @@ export class AuthService {
   register(data: User):Observable<any>{
     return this._http.post(`${this.BaseURL}user/register`, data)
   }
+  allUsers():Observable<any>{
+    return this._http.get(`${this.BaseURL}user/all`)
+  }
 }
