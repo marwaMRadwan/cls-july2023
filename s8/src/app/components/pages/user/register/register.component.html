@@ -1,0 +1,17 @@
+<section class="container">
+    <form [formGroup]="registerForm" (ngSubmit)="regMe()">
+        <div class="mb-3">
+            <input class="form-control" name="firstName" formControlName="firstName" placeholder="name">
+        </div>
+        <div class="mb-3">
+            <input class="form-control" name="telephone" formControlName="telephone" placeholder="phone">
+        </div>
+        <div class="mb-3">
+            <input class="form-control" name="email" formControlName="email" placeholder="email">
+        </div>
+        <div class="mb-3">
+            <button  class="btn btn-primary">Register</button>
+        </div>
+        
+    </form>
+</section>

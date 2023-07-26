@@ -11,6 +11,10 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { StandsComponent } from './components/pages/stands/stands.component';
 import { ProductsComponent } from './components/pages/products/products.component';
+import { RegisterComponent } from './components/pages/user/register/register.component';
+import { LoginComponent } from './components/pages/user/login/login.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,14 +24,19 @@ import { ProductsComponent } from './components/pages/products/products.componen
     NavbarComponent,
     FooterComponent,
     StandsComponent,
-    ProductsComponent
+    ProductsComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
+
   ],
   providers: [],
   bootstrap: [AppComponent]
