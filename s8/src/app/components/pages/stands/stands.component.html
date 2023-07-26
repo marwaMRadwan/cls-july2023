@@ -2,7 +2,15 @@
     <div class="row">
         <div class="col-2" *ngFor="let stand of allStands">
             <div class="m-2">
-                <p class="alert alert-primary">{{stand.title}}</p>
+                <p class="alert alert-primary">
+                    {{stand.title}}
+                </p>
+                <button
+                    routerLink="/stands/{{catId}}/{{stand.id}}"
+                    class="btn btn-primary">
+                products
+                </button>
+                
             </div>
         </div>
     </div>

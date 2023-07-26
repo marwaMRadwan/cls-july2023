@@ -10,6 +10,7 @@ import { ContactComponent } from './components/pages/contact/contact.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { StandsComponent } from './components/pages/stands/stands.component';
+import { ProductsComponent } from './components/pages/products/products.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { StandsComponent } from './components/pages/stands/stands.component';
     ContactComponent,
     NavbarComponent,
     FooterComponent,
-    StandsComponent
+    StandsComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

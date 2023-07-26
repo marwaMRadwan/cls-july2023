@@ -16,4 +16,7 @@ export class UserService {
   listStands( id: string ):Observable<any>{
     return this._http.get(`${this.URL}/api/Category/stands/2/${id}`)
   }
+  productsByStand(catId: string, standId:string):Observable<any>{
+    return this._http.get(`${this.URL}/api/ProductsByCategory/2/${catId}/${standId}/0/10`)
+  }
 }
