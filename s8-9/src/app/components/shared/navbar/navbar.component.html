@@ -10,7 +10,20 @@
             <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/register">Register</a>
+            <a class="nav-link" routerLink="/register" *ngIf="!_data.isLoggedIn">
+              Register
+            </a>
+          </li>
+          <li class="nav-item" *ngIf="!_data.isLoggedIn">
+            <a class="nav-link" routerLink="/login">Login</a>
+          </li>
+          <li class="nav-item" *ngIf="_data.isLoggedIn">
+            <a class="nav-link" routerLink="/profile">
+              {{_data.userData.first_name}}
+            </a>
+          </li>
+          <li class="nav-item" *ngIf="_data.isLoggedIn">
+            <a class="nav-link" (click)="logout()">Logout</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/contact" >Contact</a>

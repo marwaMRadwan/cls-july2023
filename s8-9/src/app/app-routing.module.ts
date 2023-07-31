@@ -6,6 +6,8 @@ import { StandsComponent } from './components/pages/stands/stands.component';
 import { ProductsComponent } from './components/pages/products/products.component';
 import { RegisterComponent } from './components/pages/user/register/register.component';
 import { LoginComponent } from './components/pages/user/login/login.component';
+import { loginGuard } from './providers/guards/login.guard';
+import { ProfileComponent } from './pages/user/profile/profile.component';
 
 const routes: Routes = [
   {path:"", component:HomeComponent},
@@ -15,7 +17,8 @@ const routes: Routes = [
     {path:":standId", component:ProductsComponent},
   ]},
   {path:"register", component:RegisterComponent},
-  {path:"login", component:LoginComponent}
+  {path:"login", component:LoginComponent, canActivate:[loginGuard]},
+  {path:"profile", component:ProfileComponent}
 ];
 
 @NgModule({
