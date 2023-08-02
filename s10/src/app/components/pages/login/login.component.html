@@ -1,0 +1,16 @@
+<section class="container my-5">
+    <div class="alert alert-danger mb-3" *ngIf="loginErr!=''">
+        {{loginErr}}
+    </div>
+    <form class="m-5" [formGroup]="login" (ngSubmit)="loginUser()">
+        <div class="mb-3">
+            <input class="form-control" placeholder="phone number" formControlName="phone">
+            <div *ngIf="loginData.phone.invalid" class="alert alert-danger">
+                Invalid Phone
+            </div>
+        </div>
+        <div class ="mb-3">
+            <button class="btn btn-primary">Login</button>
+        </div>
+    </form>
+</section>
