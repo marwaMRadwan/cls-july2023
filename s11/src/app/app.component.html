@@ -1,0 +1,27 @@
+<router-outlet></router-outlet>
+<!-- <li *ngFor="let item of allPosts | paginate: { itemsPerPage: 10, currentPage: pageNumber }"> 
+  {{item.title}}
+</li>
+<pagination-controls (pageChange)="pageNumber = $event"></pagination-controls> -->
+<!-- <p (click)="changeLang('ar')">ar</p>
+<p (click)="changeLang('en')">en</p>
+
+<div>{{ 'HELLO'| translate}}</div>
+<div>{{data.data}}</div> -->
+
+<div class="col-md-8" id="htmlData">
+  <table class="table table-bordered"  id="excel-table">
+      <tr class="table-primary">
+          <th>Id</th>
+          <th>Name</th>
+      </tr>
+      <tr *ngFor="let user of allPosts">
+          <th style="font-size:24px; color: red;">{{user.id}}</th>
+          <td>{{user.title}}</td>
+      </tr>
+  </table>
+</div>
+<div class="col-md-4 text-right">
+  <button class="btn btn-success btn-block" (click)="openPDF()">Download PDF</button>
+</div>
+<button (click)="exportexcel()">Export to Excel</button>
